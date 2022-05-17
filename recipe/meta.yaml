@@ -1,5 +1,5 @@
 {% set name = "dirty_cat" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dirty_cat-{{ version }}.tar.gz
-  sha256: 2b44f38462ad4e836861fd7a86caccd49d3490e47a2617c12edebb3c6a53dc16
+  sha256: 5201fca4311c9acf17f73a80134c696795d7b86bf08e262e06b87a1692d32c5b
   patches:
     - 0001-remove-benchmarks.patch
 
