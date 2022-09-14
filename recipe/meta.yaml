@@ -9,8 +9,6 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dirty_cat-{{ version }}.tar.gz
   sha256: a9a4ca935701a2be88a0328e9be034176fd708fab4f1e29a034201780dd33707
-  patches:
-    - 0001-remove-benchmarks.patch
 
 build:
   number: 0
