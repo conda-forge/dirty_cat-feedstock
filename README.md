@@ -1,11 +1,11 @@
-About dirty_cat
-===============
+About dirty_cat-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dirty_cat-feedstock/blob/main/LICENSE.txt)
 
 Home: http://dirty-cat.github.io/
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dirty_cat-feedstock/blob/main/LICENSE.txt)
 
 Summary: Machine learning with dirty categories.
 
