@@ -1,5 +1,5 @@
 {% set name = "dirty_cat" %}
-{% set version = "0.4.1" %}
+{% set version = "0.4.2.post0" %}
 
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dirty_cat-{{ version }}.tar.gz
-  sha256: cb290eeefc11b10197415b4ab7982e5864966723036659b1c7c17ecaf87b1a8d
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dirty_cat-{{ version }}.tar.gz
+  sha256: 4d6895b3efbc45ac451cd08d49db6ff2bd6b7e96f92e251c21ee44bf7ebbb23e
 
 build:
   number: 0
