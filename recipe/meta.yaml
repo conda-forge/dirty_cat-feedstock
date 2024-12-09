@@ -27,7 +27,9 @@ requirements:
     - pandas >=1.2.0
     - pyarrow
     - requests
-    - scikit-learn >=0.23.0
+    # due to "ImportError: cannot import name 'parse_version' from 'sklearn.utils'" error, need to pin sklearn below 1.5.1
+    # see https://stackoverflow.com/questions/78519263/cannot-import-name-parse-version-from-sklearn-utils-users-aneeshnagarajan
+    - scikit-learn >=0.23.0,<1.5.1
     - scipy >=1.4.0
 
 test:
