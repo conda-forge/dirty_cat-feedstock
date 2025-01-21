@@ -7,24 +7,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dirty_cat-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dirty_cat-{{ version }}.tar.gz
   sha256: cb290eeefc11b10197415b4ab7982e5864966723036659b1c7c17ecaf87b1a8d
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
     - joblib
     - numpy >=1.17.3
     - pandas >=1.2.0
     - pyarrow
-    - python >=3.8
+    - python >={{ python_min }}
     - requests
     - scikit-learn >=0.23.0
     - scipy >=1.4.0
@@ -36,6 +36,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: http://dirty-cat.github.io/
