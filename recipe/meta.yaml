@@ -1,5 +1,5 @@
 {% set name = "dirty_cat" %}
-{% set version = "0.4.1" %}
+{% set version = "0.4.2.post0" %}
 
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dirty_cat-{{ version }}.tar.gz
-  sha256: cb290eeefc11b10197415b4ab7982e5864966723036659b1c7c17ecaf87b1a8d
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dirty_cat-{{ version }}.tar.gz
+  sha256: 4d6895b3efbc45ac451cd08d49db6ff2bd6b7e96f92e251c21ee44bf7ebbb23e
 
 build:
   number: 0
@@ -18,15 +18,18 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
+    - setuptools
   run:
+    - python >={{ python_min }}
     - joblib
     - numpy >=1.17.3
     - pandas >=1.2.0
     - pyarrow
-    - python >=3.8
     - requests
-    - scikit-learn >=0.23.0
+    # due to "ImportError: cannot import name 'parse_version' from 'sklearn.utils'" error, need to pin sklearn below 1.5.1
+    # see https://stackoverflow.com/questions/78519263/cannot-import-name-parse-version-from-sklearn-utils-users-aneeshnagarajan
+    - scikit-learn >=0.23.0,<1.5
     - scipy >=1.4.0
 
 test:
@@ -36,6 +39,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: http://dirty-cat.github.io/
